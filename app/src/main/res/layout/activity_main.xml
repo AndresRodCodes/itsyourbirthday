@@ -40,11 +40,11 @@
         android:layout_marginTop="248dp"
         android:background="#134ebc"
         android:onClick="chooseAnswer"
+        android:tag="1"
         android:text="Girl with long hair"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/button_topRight"
-        app:layout_constraintTop_toTopOf="parent"
-        android:tag="1"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_topRight"
@@ -53,10 +53,11 @@
         android:layout_height="170dp"
         android:layout_marginEnd="32dp"
         android:background="#134ebc"
+        android:onClick="chooseAnswer"
+        android:tag="2"
         android:text="Boy with long hair"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_topLeft"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:tag="2"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <Button
@@ -66,10 +67,11 @@
         android:layout_height="170dp"
         android:layout_marginTop="8dp"
         android:background="#134ebc"
+        android:onClick="chooseAnswer"
+        android:tag="3"
         android:text="Girl with short hair"
         app:layout_constraintStart_toStartOf="@+id/button_topLeft"
-        app:layout_constraintTop_toBottomOf="@+id/button_topLeft"
-        android:tag="3"/>
+        app:layout_constraintTop_toBottomOf="@+id/button_topLeft" />
 
     <Button
         android:id="@+id/button_bottomRight"
@@ -77,19 +79,24 @@
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:background="#134ebc"
+        android:onClick="chooseAnswer"
+        android:tag="4"
         android:text="Boy with short hair"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_bottomLeft"
-        app:layout_constraintStart_toStartOf="@+id/button_topRight"
-        android:tag="4"/>
+        app:layout_constraintStart_toStartOf="@+id/button_topRight" />
 
     <Button
         android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="31dp"
         android:background="?attr/actionModeCloseDrawable"
         android:backgroundTint="@android:color/holo_blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="31dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -38,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
         button_bottomLeft = findViewById(R.id.button_bottomLeft);
         button_bottomRight = findViewById(R.id.button_bottomRight);
         button_back = findViewById(R.id.button_back);
-
         button_back.setVisibility(View.GONE);
-
 
     }
 }
