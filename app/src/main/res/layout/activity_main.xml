@@ -19,6 +19,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/text_choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Choose your character"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     <Button
         android:id="@+id/button_topLeft"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -31,7 +43,8 @@
         android:text="Girl with long hair"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/button_topRight"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:tag="1"/>
 
     <Button
         android:id="@+id/button_topRight"
@@ -42,7 +55,8 @@
         android:background="#134ebc"
         android:text="Boy with long hair"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_topLeft"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:tag="2"/>
 
 
     <Button
@@ -54,7 +68,8 @@
         android:background="#134ebc"
         android:text="Girl with short hair"
         app:layout_constraintStart_toStartOf="@+id/button_topLeft"
-        app:layout_constraintTop_toBottomOf="@+id/button_topLeft" />
+        app:layout_constraintTop_toBottomOf="@+id/button_topLeft"
+        android:tag="3"/>
 
     <Button
         android:id="@+id/button_bottomRight"
@@ -64,7 +79,8 @@
         android:background="#134ebc"
         android:text="Boy with short hair"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_bottomLeft"
-        app:layout_constraintStart_toStartOf="@+id/button_topRight" />
+        app:layout_constraintStart_toStartOf="@+id/button_topRight"
+        android:tag="4"/>
 
     <Button
         android:id="@+id/button_back"
@@ -75,17 +91,5 @@
         android:backgroundTint="@android:color/holo_blue_light"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="31dp" />
-
-    <TextView
-        android:id="@+id/text_choose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Choose your character"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </android.support.constraint.ConstraintLayout>

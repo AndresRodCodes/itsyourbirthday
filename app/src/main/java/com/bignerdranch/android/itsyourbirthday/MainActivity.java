@@ -33,12 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         text_choose = findViewById(R.id.text_choose);
-
         button_topLeft = findViewById(R.id.button_topLeft);
         button_topRight = findViewById(R.id.button_topRight);
         button_bottomLeft = findViewById(R.id.button_bottomLeft);
         button_bottomRight = findViewById(R.id.button_bottomRight);
-
         button_back = findViewById(R.id.button_back);
 
         button_back.setVisibility(View.GONE);
