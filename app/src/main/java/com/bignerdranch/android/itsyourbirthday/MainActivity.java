@@ -21,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> answersArrayList;
     //ArrayList<String> characterArrayList;
     //ArrayList<String> cakeArrayList;
+    int timesTapped = 0;
 
     public void chooseAnswer(View view) {
 
         Button button_pressed = (Button) view;
 
-        Toast.makeText(getApplicationContext(),button_pressed.getText().toString(), Toast.LENGTH_LONG).show();
+        answersArrayList.add(button_pressed.getText().toString());
+
+        Toast.makeText(getApplicationContext(),answersArrayList.get(timesTapped), Toast.LENGTH_LONG).show();
 
         text_choose.setText("Choose your birthday cake!");
         button_topLeft.setText("Sheet Cake");
@@ -35,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         button_bottomRight.setText("Ice cream Cake");
 
         button_back.setVisibility(View.VISIBLE);
+
+        timesTapped++;
+        Log.i("Info", Integer.toString(answersArrayList.size()));
 
     }
 
