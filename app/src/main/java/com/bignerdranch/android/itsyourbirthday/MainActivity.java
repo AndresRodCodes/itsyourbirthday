@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 button_bottomLeft.setText(bottomLeftArray.get(timesTapped));
                 button_bottomRight.setText(bottomRightArray.get(timesTapped));
 
+                Log.i("info", "I ran");
+
             } else {
 
                 text_choose.setText(chooseArray.get(timesTapped + 1));
@@ -81,9 +83,9 @@ public class MainActivity extends AppCompatActivity {
                 button_bottomLeft.setText(bottomLeftArray.get(timesTapped + 1));
                 button_bottomRight.setText(bottomRightArray.get(timesTapped + 1));
 
-            }
+                timesTapped++;
 
-            timesTapped++;
+            }
 
         }
 
