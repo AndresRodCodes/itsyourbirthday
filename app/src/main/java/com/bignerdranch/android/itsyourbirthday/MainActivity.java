@@ -19,27 +19,39 @@ public class MainActivity extends AppCompatActivity {
     Button button_bottomRight;
     Button button_back;
     ArrayList<String> answersArrayList;
-    //ArrayList<String> characterArrayList;
-    //ArrayList<String> cakeArrayList;
-    int timesTapped = 0;
+    ArrayList<String> chooseArray;
+
+    ArrayList<String> topLeftArray;
+    ArrayList<String> topRightArray;
+    ArrayList<String> bottomLeftArray;
+    ArrayList<String> bottomRightArray;
+
+    int timesTapped = 1;
 
     public void chooseAnswer(View view) {
 
-        Button button_pressed = (Button) view;
+        if (timesTapped < chooseArray.size()) {
 
-        answersArrayList.add(button_pressed.getText().toString());
+            Button button_pressed = (Button) view;
 
-        Toast.makeText(getApplicationContext(),answersArrayList.get(timesTapped), Toast.LENGTH_LONG).show();
+            answersArrayList.add((String) button_pressed.getText());
 
-        text_choose.setText("Choose your birthday cake!");
-        button_topLeft.setText("Sheet Cake");
-        button_topRight.setText("Layered Cake");
-        button_bottomLeft.setText("Cupcake Cake");
-        button_bottomRight.setText("Ice cream Cake");
+            text_choose.setText(chooseArray.get(timesTapped));
+            button_topLeft.setText(topLeftArray.get(timesTapped));
+            button_topRight.setText(topRightArray.get(timesTapped));
+            button_bottomLeft.setText(bottomLeftArray.get(timesTapped));
+            button_bottomRight.setText(bottomRightArray.get(timesTapped));
+
+            timesTapped++;
+
+        } else {
+
+            Log.i("Info", "End of Arrays");
+
+        }
 
         button_back.setVisibility(View.VISIBLE);
 
-        timesTapped++;
         Log.i("Info", Integer.toString(answersArrayList.size()));
 
     }
@@ -56,21 +68,27 @@ public class MainActivity extends AppCompatActivity {
         button_bottomRight = findViewById(R.id.button_bottomRight);
         button_back = findViewById(R.id.button_back);
         button_back.setVisibility(View.GONE);
+
         answersArrayList = new ArrayList<>();
-        /*
-        characterArrayList = new ArrayList<>();
-        cakeArrayList = new ArrayList<>();
+        chooseArray = new ArrayList<>();
 
-        characterArrayList.add("Girl with long hair");
-        characterArrayList.add("Boy with long hair");
-        characterArrayList.add("Girl with short hair");
-        characterArrayList.add("Boy with short hair");
+        topLeftArray = new ArrayList<>();
+        topRightArray = new ArrayList<>();
+        bottomLeftArray = new ArrayList<>();
+        bottomRightArray = new ArrayList<>();
 
-        cakeArrayList.add("Sheet cake");
-        cakeArrayList.add("Layered cake");
-        cakeArrayList.add("Cupcake cake");
-        cakeArrayList.add("Ice cream cake");
-        */
+        chooseArray.add("Choose your character");
+        chooseArray.add("Choose your birthday cake!");
+
+        topLeftArray.add("Girl with long hair");
+        topRightArray.add("Boy with long hair");
+        bottomLeftArray.add("Girl with short hair");
+        bottomRightArray.add("Boy with short hair");
+
+        topLeftArray.add("Sheet cake");
+        topRightArray.add("Layered cake");
+        bottomLeftArray.add("Cupcake cake");
+        bottomRightArray.add("Ice cream cake");
 
     }
 }
