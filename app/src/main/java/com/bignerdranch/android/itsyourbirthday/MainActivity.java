@@ -26,7 +26,36 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> bottomLeftArray;
     ArrayList<String> bottomRightArray;
 
-    int timesTapped = 1;
+    int timesTapped = 0;
+
+    public void back(View view) {
+
+        if (timesTapped > 0) {
+
+            answersArrayList.remove(answersArrayList.size() - 1);
+
+            timesTapped --;
+
+            text_choose.setText(chooseArray.get(timesTapped));
+            button_topLeft.setText(topLeftArray.get(timesTapped));
+            button_topRight.setText(topRightArray.get(timesTapped));
+            button_bottomLeft.setText(bottomLeftArray.get(timesTapped));
+            button_bottomRight.setText(bottomRightArray.get(timesTapped));
+
+            Log.i("info-back", "Times Tapped: " + Integer.toString(timesTapped));
+
+            for (int i = 0; i < answersArrayList.size(); i++) {
+
+                Log.i("info-back","answerList: " + answersArrayList.get(i));
+
+            }
+
+        } else {
+
+            Toast.makeText(this, "Can't go back", Toast.LENGTH_SHORT).show();
+
+        }
+    }
 
     public void chooseAnswer(View view) {
 
@@ -36,23 +65,39 @@ public class MainActivity extends AppCompatActivity {
 
             answersArrayList.add((String) button_pressed.getText());
 
-            text_choose.setText(chooseArray.get(timesTapped));
-            button_topLeft.setText(topLeftArray.get(timesTapped));
-            button_topRight.setText(topRightArray.get(timesTapped));
-            button_bottomLeft.setText(bottomLeftArray.get(timesTapped));
-            button_bottomRight.setText(bottomRightArray.get(timesTapped));
+            if (chooseArray.size() - timesTapped == 1) {
+
+                text_choose.setText(chooseArray.get(timesTapped));
+                button_topLeft.setText(topLeftArray.get(timesTapped));
+                button_topRight.setText(topRightArray.get(timesTapped));
+                button_bottomLeft.setText(bottomLeftArray.get(timesTapped));
+                button_bottomRight.setText(bottomRightArray.get(timesTapped));
+
+            } else {
+
+                text_choose.setText(chooseArray.get(timesTapped + 1));
+                button_topLeft.setText(topLeftArray.get(timesTapped + 1));
+                button_topRight.setText(topRightArray.get(timesTapped + 1));
+                button_bottomLeft.setText(bottomLeftArray.get(timesTapped + 1));
+                button_bottomRight.setText(bottomRightArray.get(timesTapped + 1));
+
+            }
 
             timesTapped++;
-
-        } else {
-
-            Log.i("Info", "End of Arrays");
 
         }
 
         button_back.setVisibility(View.VISIBLE);
 
-        Log.i("Info", Integer.toString(answersArrayList.size()));
+        Log.i("Info","answerArrayList size: "  + Integer.toString(answersArrayList.size()));
+        Log.i("info", "timesTapped: " + Integer.toString(timesTapped));
+        Log.i("info", "chooseArray size: " + Integer.toString(chooseArray.size()));
+
+        for (int i = 0; i < answersArrayList.size(); i++) {
+
+            Log.i("info","answerList: " + answersArrayList.get(i));
+
+        }
 
     }
 
@@ -77,18 +122,29 @@ public class MainActivity extends AppCompatActivity {
         bottomLeftArray = new ArrayList<>();
         bottomRightArray = new ArrayList<>();
 
-        chooseArray.add("Choose your character");
-        chooseArray.add("Choose your birthday cake!");
-
+        chooseArray.add("Choose your character!");
         topLeftArray.add("Girl with long hair");
-        topRightArray.add("Boy with long hair");
+        topRightArray.add("Boy with Long hair");
         bottomLeftArray.add("Girl with short hair");
         bottomRightArray.add("Boy with short hair");
 
+        text_choose.setText(chooseArray.get(timesTapped));
+        button_topLeft.setText(topLeftArray.get(timesTapped));
+        button_topRight.setText(topRightArray.get(timesTapped));
+        button_bottomLeft.setText(bottomLeftArray.get(timesTapped));
+        button_bottomRight.setText(bottomRightArray.get(timesTapped));
+
+        chooseArray.add("Choose your birthday cake!");
         topLeftArray.add("Sheet cake");
         topRightArray.add("Layered cake");
         bottomLeftArray.add("Cupcake cake");
         bottomRightArray.add("Ice cream cake");
+
+        chooseArray.add("Choose your flavor!");
+        topLeftArray.add("Chocolate");
+        topRightArray.add("Vanilla");
+        bottomLeftArray.add("Tres Leche");
+        bottomRightArray.add("Strawberry");
 
     }
 }
