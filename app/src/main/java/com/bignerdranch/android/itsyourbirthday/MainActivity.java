@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 button_bottomRight.setText(bottomRightArray.get(timesTapped));
 
                 Intent intent = new Intent(this, PartyActivity.class);
+                intent.putExtra("answerList", answersArrayList);
                 startActivity(intent);
 
             } else {
