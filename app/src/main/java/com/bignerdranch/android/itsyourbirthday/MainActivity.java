@@ -1,5 +1,6 @@
 package com.bignerdranch.android.itsyourbirthday;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -73,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 button_bottomLeft.setText(bottomLeftArray.get(timesTapped));
                 button_bottomRight.setText(bottomRightArray.get(timesTapped));
 
-                Log.i("info", "I ran");
+                Intent intent = new Intent(this, PartyActivity.class);
+                startActivity(intent);
 
             } else {
 
