@@ -148,5 +148,35 @@ public class MainActivity extends AppCompatActivity {
         bottomLeftArray.add("Tres Leche");
         bottomRightArray.add("Strawberry");
 
+        chooseArray.add("Choose your special guest!");
+        topLeftArray.add("Elephant");
+        topRightArray.add("Clown");
+        bottomLeftArray.add("Dracula");
+        bottomRightArray.add("Robot");
+
+        chooseArray.add("Choose your setting!");
+        topLeftArray.add("Space");
+        topRightArray.add("Underwater");
+        bottomLeftArray.add("Jungle");
+        bottomRightArray.add("Space");
+
+        chooseArray.add("Choose your ballon color!");
+        topLeftArray.add("Pink");
+        topRightArray.add("Blue");
+        bottomLeftArray.add("red");
+        bottomRightArray.add("white");
+
+        chooseArray.add("Choose your party game!");
+        topLeftArray.add("Jumper");
+        topRightArray.add("Water Slide");
+        bottomLeftArray.add("Rocket ride");
+        bottomRightArray.add("Pin the tail on the donkey");
+
+        chooseArray.add("Choose your Entertainment!");
+        topLeftArray.add("Musician");
+        topRightArray.add("Mad Scientist");
+        bottomLeftArray.add("Dancer");
+        bottomRightArray.add("Magician");
+
     }
 }
